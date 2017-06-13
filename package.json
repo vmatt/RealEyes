@@ -1,0 +1,14 @@
+{
+  "name": "RealEyes",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "author": "Mate Valko",
+  "license": "BSD",
+  "dependencies": {
+    "aws-sdk": "~2.69.0"
+  }
+}
