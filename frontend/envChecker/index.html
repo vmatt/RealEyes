@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Environment Checker</title>
+</head>
+<body>
+<h2>Environment Checker</h2>
+<pre id="result"></pre>
+<script type="text/javascript">
+    window._RealeyesitEnvDetectCallback = function (result) {
+        var resultEl = document.querySelector('#result');
+        resultEl.innerHTML = JSON.stringify(result, null, 2);
+        var script = document.getElementById('Realeyesit_EnvironmentCheckerScript');
+        script.parentNode.removeChild(script);
+        delete window._RealeyesitEnvDetectCallback;
+    };
+
+    (function() {
+        var envDetect = document.createElement('script');
+        envDetect.id = 'Realeyesit_EnvironmentCheckerScript';
+        envDetect.type = 'text/javascript';
+        envDetect.src = './Realeyesit.EnvironmentalDetectionAPI.min.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(envDetect, s);
+    })();
+</script>
+</body>
+</html>
